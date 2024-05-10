@@ -13,6 +13,7 @@ const server = http.createServer( async (req, res) => {
 
     let status;
     let filepath;
+    let contentType;
 
     if (req.method === "GET")
     {
@@ -20,29 +21,39 @@ const server = http.createServer( async (req, res) => {
         {
             case "/":
                 status = 200;
+                contentType = "text/html";
                 filepath = path.join(__dirname, "public", "index.html");
                 break;
             
             case "/about":
                 status = 200;
+                contentType = "text/html";
                 filepath = path.join(__dirname, "public", "about.html");
                 break;
 
             case "/contact":
                 status = 200;
+                contentType = "text/html";
                 filepath = path.join(__dirname, "public", "contact.html");
+                break;
+
+            case "/style.css":
+                status = 200;
+                contentType = "text/css";
+                filepath = path.join(__dirname, "public", "style.css");
                 break;
 
             default: 
                 status = 404;
+                contentType = "text/html";
                 filepath = path.join(__dirname, "public", "error.html");
         }
 
     }
 
-    res.writeHead(status, "Content-Type", "text/html");
-    const page = await fs.readFile(filepath);
-    res.write(page);
+    res.writeHead(status, "Content-Type", contentType);
+    const data = await fs.readFile(filepath);
+    res.write(data);
     res.end();
 });
 
