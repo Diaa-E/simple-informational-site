@@ -1,0 +1,16 @@
+import http from "node:http";
+
+const PORT = process.env.PORT;
+const HOSTNAME = process.env.HOSTNAME;
+
+const server = http.createServer((req, res) => {
+
+    res.writeHead(200, "Content-Type", "text/html");
+    res.write("<h1>Hello world</h1>");
+    res.end();
+});
+
+server.listen(PORT, HOSTNAME, () => {
+
+    console.log(`Server running at: http://${HOSTNAME}:${PORT}`);
+});
