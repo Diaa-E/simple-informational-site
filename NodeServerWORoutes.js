@@ -2,6 +2,9 @@ import http from "node:http";
 import path from "node:path";
 import url from "node:url";
 import fs from "node:fs/promises";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const HOSTNAME = process.env.HOSTNAME || "127.0.0.1";

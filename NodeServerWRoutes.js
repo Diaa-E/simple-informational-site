@@ -1,5 +1,8 @@
 import http from "node:http";
 import { routes } from "./routes/routes.js";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const HOSTNAME = process.env.HOSTNAME || "127.0.0.1";
