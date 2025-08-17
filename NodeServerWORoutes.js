@@ -3,8 +3,8 @@ import path from "node:path";
 import url from "node:url";
 import fs from "node:fs/promises";
 
-const PORT = process.env.PORT;
-const HOSTNAME = process.env.HOSTNAME;
+const PORT = process.env.PORT || 3000;
+const HOSTNAME = process.env.HOSTNAME || "127.0.0.1";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
