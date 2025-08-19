@@ -25,6 +25,11 @@ app.get("/contact", (req, res) => {
     res.sendFile("contact.html", {root: PUBLIC_PATH});
 });
 
+app.get("/{*splat}", (req, res) => {
+
+    res.sendFile("error.html", {root: PUBLIC_PATH});
+});
+
 app.listen(PORT, (error) => {
 
     if (error)
