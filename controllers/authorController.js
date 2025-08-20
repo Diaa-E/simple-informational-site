@@ -1,4 +1,5 @@
 import { getAuthorById as getAuthorByIdDB } from "../db.js";
+import CustomNotFoundError from "../errors/customBotFoundError.js";
 
 async function getAuthorById(req, res)
 {
@@ -8,8 +9,7 @@ async function getAuthorById(req, res)
 
     if (!author)
     {
-        res.status(404).send(`Author Not Found (ID: ${authorId})`);
-        return;
+        throw new CustomNotFoundError(`Author Not Found (ID: ${authorId})`);
     }
 
     res.send(`Author Name: ${author.name}`);
