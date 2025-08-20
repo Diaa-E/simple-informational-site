@@ -1,6 +1,9 @@
 import { Router } from "express";
+import logTime from "../logTime.js";
 
 const booksRouter = Router();
+
+booksRouter.use(logTime);
 
 booksRouter.route("/")
     .get((req, res) => {
