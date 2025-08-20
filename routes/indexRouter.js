@@ -23,7 +23,7 @@ indexRouter.get("/contact", (req, res) => {
 
 indexRouter.get("/{*splat}", (req, res) => {
 
-    res.sendFile("error.html", { root: PUBLIC_PATH });
+    res.status(404).sendFile("error.html", { root: PUBLIC_PATH });
 });
 
 export default indexRouter;
