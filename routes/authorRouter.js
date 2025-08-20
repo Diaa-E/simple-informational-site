@@ -1,5 +1,6 @@
 import { Router } from "express";
 import logTime from "../logTime.js";
+import { getAuthorById } from "../controllers/authorController.js";
 
 const authorRouter = Router();
 
@@ -16,11 +17,7 @@ authorRouter.route("/")
     });
 
 authorRouter.route("/:authorId")
-    .get((req, res) => {
-
-        const { authorId } = req.params;
-        res.send(`GET Author ID: ${authorId}`);
-    })
+    .get(getAuthorById)
     .post((req, res) => {
 
         const { authorId } = req.params;
