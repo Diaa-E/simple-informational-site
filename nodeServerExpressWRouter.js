@@ -13,6 +13,11 @@ const PORT = process.env.PORT || 3000;
 app.use("/books", booksRouter);
 app.use("/authors", authorRouter);
 app.use("/", indexRouter);
+app.use((err, req, res, next) => {
+
+    console.error(err);
+    res.status(500).send(err);
+});
 
 app.listen(PORT, (error) => {
 
