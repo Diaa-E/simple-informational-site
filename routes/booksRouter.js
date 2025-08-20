@@ -2,15 +2,26 @@ import { Router } from "express";
 
 const booksRouter = Router();
 
-booksRouter.get("/", (req, res) => {
+booksRouter.route("/")
+    .get((req, res) => {
 
-    res.send("All Books");
-});
+        res.send("GET All Books");
+    })
+    .post((req, res) => {
 
-booksRouter.get("/:bookId", (req, res) => {
+        res.send("POST all Books")
+    });
 
-    const { bookId } = req.params;
-    res.send(`Book ID: ${bookId}`);
-});
+booksRouter.route("/:bookId")
+    .get((req, res) => {
+
+        const { bookId } = req.params;
+        res.send(`GET Book ID: ${bookId}`);
+    })
+    .post((req, res) => {
+
+        const { bookId } = req.params;
+        res.send(`POST Book ID: ${bookId}`);
+    });
 
 export default booksRouter;

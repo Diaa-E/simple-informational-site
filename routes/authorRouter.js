@@ -2,15 +2,26 @@ import { Router } from "express";
 
 const authorRouter = Router();
 
-authorRouter.get("/", (req, res) => {
+authorRouter.route("/")
+    .get((req, res) => {
 
-    res.send("All Authors");
-});
+        res.send("GET All Authors");
+    })
+    .post((req, res) => {
 
-authorRouter.get("/:authorId", (req, res) => {
+        res.send("POST All Authors");
+    });
 
-    const { authorId } = req.params;
-    res.send(`Author ID: ${authorId}`);
-});
+authorRouter.route("/:authorId")
+    .get((req, res) => {
+
+        const { authorId } = req.params;
+        res.send(`GET Author ID: ${authorId}`);
+    })
+    .post((req, res) => {
+
+        const { authorId } = req.params;
+        res.send(`POST Author ID: ${authorId}`);
+    });
 
 export default authorRouter;
