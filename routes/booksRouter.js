@@ -1,5 +1,6 @@
 import { Router } from "express";
 import logTime from "../logTime.js";
+import { getBookById } from "../controllers/bookController.js";
 
 const booksRouter = Router();
 
@@ -16,11 +17,7 @@ booksRouter.route("/")
     });
 
 booksRouter.route("/:bookId")
-    .get((req, res) => {
-
-        const { bookId } = req.params;
-        res.send(`GET Book ID: ${bookId}`);
-    })
+    .get(getBookById)
     .post((req, res) => {
 
         const { bookId } = req.params;
