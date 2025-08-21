@@ -8,7 +8,7 @@ const indexRouter = Router();
 
 indexRouter.get("/", (req, res) => {
 
-    res.sendFile("index.html", { root: PUBLIC_PATH });
+    res.render("index", { message: "Rendered EJS" });
 });
 
 indexRouter.get("/about", (req, res) => {
