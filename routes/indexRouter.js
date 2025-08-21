@@ -4,11 +4,22 @@ import path from "node:path";
 
 const PUBLIC_PATH = path.join(__dirname, "public");
 
+const links = [
+    {
+        href: "/about",
+        text: "About"
+    },
+    {
+        href: "/contact",
+        text: "Contact Us"
+    }
+];
+
 const indexRouter = Router();
 
 indexRouter.get("/", (req, res) => {
 
-    res.render("index", { message: "Rendered EJS" });
+    res.render("index", { message: "Rendered EJS", links: links });
 });
 
 indexRouter.get("/about", (req, res) => {
