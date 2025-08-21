@@ -15,11 +15,20 @@ const links = [
     }
 ];
 
+const users = [
+    "John",
+    "Bruce",
+    "Mark",
+    "Adam",
+    "Anita",
+    "Joanna"
+]
+
 const indexRouter = Router();
 
 indexRouter.get("/", (req, res) => {
 
-    res.render("index", { message: "Rendered EJS", links: links });
+    res.render("index", { message: "Rendered EJS", links: links, users: users });
 });
 
 indexRouter.get("/about", (req, res) => {
