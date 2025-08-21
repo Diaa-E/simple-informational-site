@@ -1,5 +1,5 @@
 import { Router } from "express";
-import logTime from "../logTime.js";
+import logTime from "../utils/logTime.js";
 import { getAuthorById } from "../controllers/authorController.js";
 
 const authorRouter = Router();
