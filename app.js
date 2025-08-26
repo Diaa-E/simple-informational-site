@@ -5,17 +5,7 @@ import indexRouter from "./routes/indexRouter.js";
 import authorRouter from "./routes/authorRouter.js";
 import booksRouter from "./routes/booksRouter.js";
 import path from "node:path";
-
-const links = [
-    {
-        href: "/about",
-        text: "About"
-    },
-    {
-        href: "/contact",
-        text: "Contact Us"
-    }
-];
+import links from "./utils/links.js";
 
 dotenv.config();
 const app = express();

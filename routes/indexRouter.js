@@ -2,19 +2,9 @@ import { Router } from "express";
 import { __dirname } from "../rootDir.js";
 import path from "node:path";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
+import links from "../utils/links.js";
 
 const PUBLIC_PATH = path.join(__dirname, "public");
-
-const links = [
-    {
-        href: "/about",
-        text: "About"
-    },
-    {
-        href: "/contact",
-        text: "Contact Us"
-    }
-];
 
 const users = [
     "John",
