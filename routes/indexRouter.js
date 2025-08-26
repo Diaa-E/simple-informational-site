@@ -29,19 +29,16 @@ const indexRouter = Router();
 indexRouter.get("/", (req, res) => {
 
     res.render("index", { message: "Rendered EJS", links: links, users: users });
-});
-
-indexRouter.get("/about", (req, res) => {
+})
+.get("/about", (req, res) => {
 
     res.render("about", {links: links});
-});
-
-indexRouter.get("/contact", (req, res) => {
+})
+.get("/contact", (req, res) => {
 
     res.render("contact", {links: links});
-});
-
-indexRouter.get("/{*splat}", (req, res) => {
+})
+.get("/{*splat}", (req, res) => {
 
     res.status(404).render("error", { links: links });
 });
