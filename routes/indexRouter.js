@@ -33,7 +33,7 @@ indexRouter.get("/", (req, res) => {
 
 indexRouter.get("/about", (req, res) => {
 
-    res.sendFile("about.html", { root: PUBLIC_PATH });
+    res.render("about", {links: links});
 });
 
 indexRouter.get("/contact", (req, res) => {
