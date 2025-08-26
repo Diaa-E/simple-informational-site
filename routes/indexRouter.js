@@ -38,7 +38,7 @@ indexRouter.get("/about", (req, res) => {
 
 indexRouter.get("/contact", (req, res) => {
 
-    res.sendFile("contact.html", { root: PUBLIC_PATH });
+    res.render("contact", {links: links});
 });
 
 indexRouter.get("/{*splat}", (req, res) => {
