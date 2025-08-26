@@ -6,6 +6,17 @@ import authorRouter from "./routes/authorRouter.js";
 import booksRouter from "./routes/booksRouter.js";
 import path from "node:path";
 
+const links = [
+    {
+        href: "/about",
+        text: "About"
+    },
+    {
+        href: "/contact",
+        text: "Contact Us"
+    }
+];
+
 dotenv.config();
 const app = express();
 
@@ -21,7 +32,7 @@ app.use("/", indexRouter);
 app.use((err, req, res, next) => {
 
     console.error(err);
-    res.status(err.statusCode || 500).send(err.message);
+    res.status(err.statusCode || 500).render("error", {links: links});
 });
 
 app.listen(PORT, (error) => {

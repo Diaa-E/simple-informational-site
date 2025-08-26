@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { __dirname } from "../rootDir.js";
 import path from "node:path";
+import CustomNotFoundError from "../errors/customBotFoundError.js";
 
 const PUBLIC_PATH = path.join(__dirname, "public");
 
@@ -40,7 +41,7 @@ indexRouter.get("/", (req, res) => {
 })
 .get("/{*splat}", (req, res) => {
 
-    res.status(404).render("error", { links: links });
+    throw new CustomNotFoundError(`Page Not Found`);
 });
 
 export default indexRouter;
