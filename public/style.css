@@ -14,8 +14,10 @@
 body{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 50px;
     background-color: var(--bg);
+    min-height: 100dvh;
 }
 
 .error{
@@ -50,4 +52,23 @@ body{
 .page-title{
     text-align: center;
     color: var(--text);
+}
+
+.footer{
+    background-color: var(--bg-light);
+    display: flex;
+    place-items: center;
+    place-content: center;
+    justify-content: space-between;
+    padding: 50px 200px;
+    margin-bottom: 0;
+}
+
+.footer p{
+    color: var(--text);
+}
+
+.name{
+    color: var(--text-title);
+    font-weight: bold;
 }
