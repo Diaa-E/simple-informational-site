@@ -8,10 +8,11 @@
 </head>
 <body>
     <%- include("components/navbar", {activeTab: ""}) %>
-    <h2 class="error">
-        Error:
-        <%= `${status}, ${message}` %>
-    </h2>
+    <h1 class="error">
+        Error
+    </h1>
+    <h2 class="error-message"><%= status %></h2>
+    <h2 class="error-message"><%= message %></h2>
     <%- include("components/footer", {}) %>
 </body>
 </html>

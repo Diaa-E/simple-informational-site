@@ -5,6 +5,7 @@
     --text: #d3dad9;
     --text-title: #d3bf72;
     --active: #67b5e8;
+    --error: #e86767;
 }
 
 *{
@@ -22,7 +23,13 @@ body{
 }
 
 .error{
-    color: red;
+    color: var(--error);
+    text-align: center;
+}
+
+.error-message{
+    color: var(--text);
+    text-align: center;
 }
 
 .navbar{
