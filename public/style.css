@@ -1,14 +1,53 @@
+:root{
+
+    --bg: #37353e;
+    --bg-light: #44444e;
+    --text: #d3dad9;
+    --text-title: #d3bf72;
+}
+
 *{
     font-family: Courier, monospace;
+    margin: 0;
 }
 
 body{
     display: flex;
     flex-direction: column;
-    place-items: center;
     gap: 50px;
+    background-color: var(--bg);
 }
 
 .error{
     color: red;
+}
+
+.navbar{
+    background-color: var(--bg-light);
+    display: flex;
+    place-items: center;
+    place-content: center;
+    justify-content: space-between;
+    padding: 30px 200px;
+}
+
+.navbar .nav-link, .nav-link:visited{
+    text-decoration: none;
+    color: var(--text);
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.home-link, .home-link:visited{
+    text-decoration: none;
+    color: var(--text-title);
+}
+
+.page-title{
+    text-align: center;
+    color: var(--text);
 }

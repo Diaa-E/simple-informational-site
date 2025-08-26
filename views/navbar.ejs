@@ -1,9 +1,9 @@
-<nav>
-    <a href="/">Simple Informational Site</a>
+<nav class="navbar">
+    <a href="/" class="home-link">Simple Informational Site</a>
     <ul>
         <% links.map((link) => { %>
             <li>
-                <a href="<%= link.href %>">
+                <a class="nav-link" href="<%= link.href %>">
                     <span>
                         <%= link.text %> 
                     </span>
