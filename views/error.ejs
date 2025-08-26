@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <%- include("components/navbar", {}) %>
+    <%- include("components/navbar", {activeTab: ""}) %>
     <h2 class="error">
         Error:
         <%= `${status}, ${message}` %>

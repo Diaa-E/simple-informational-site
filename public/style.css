@@ -4,6 +4,7 @@
     --bg-light: #44444e;
     --text: #d3dad9;
     --text-title: #d3bf72;
+    --active: #67b5e8;
 }
 
 *{
@@ -71,4 +72,10 @@ body{
 .name{
     color: var(--text-title);
     font-weight: bold;
+}
+
+.active{
+    color: var(--active);
+    font-weight: bold;
+    border-bottom: 3px solid var(--active);
 }
