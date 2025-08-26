@@ -32,7 +32,7 @@ app.use("/", indexRouter);
 app.use((err, req, res, next) => {
 
     console.error(err);
-    res.status(err.statusCode || 500).render("error", {links: links});
+    res.status(err.statusCode || 500).render("error", { links: links, status: err.statusCode, message: err.message });
 });
 
 app.listen(PORT, (error) => {
