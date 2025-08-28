@@ -8,12 +8,7 @@
     <body>
         <%- include("components/navbar", {links: links, activeTab: ""}) %>
         <div class="content">
-            <h2 class="page-title">Users</h2>
-            <ul>
-                <% users.forEach((user) => {%>
-                    <%- include("users/user", { user: user }) %>
-                <% }) %>
-            </ul>
+            <h1 class="page-title">Simple Informational Site</h1>
         </div>
         <%- include("components/footer", {}) %>
     </body>
