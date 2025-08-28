@@ -2,6 +2,7 @@
 
     --bg: #37353e;
     --bg-light: #44444e;
+    --bg-card: #715a5a;
     --text: #d3dad9;
     --text-title: #d3bf72;
     --active: #67b5e8;
@@ -91,4 +92,15 @@ body{
     color: var(--active);
     font-weight: bold;
     border-bottom: 3px solid var(--active);
+}
+
+.card-title{
+    color: var(--text);
+    text-align: center;
+}
+
+.info-card{
+    background-color: var(--bg-card);
+    margin: 50px;
+    padding: 20px;
 }
