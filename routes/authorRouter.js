@@ -10,7 +10,7 @@ authorRouter.use(logTime);
 authorRouter.route("/")
     .get((req, res) => {
 
-        res.render("authors", { links: links });
+        res.render("authors", { links: links, author: null });
     });
 
 authorRouter.route("/:authorId")
