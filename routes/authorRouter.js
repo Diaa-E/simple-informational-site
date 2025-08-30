@@ -1,6 +1,6 @@
 import { Router } from "express";
 import logTime from "../utils/logTime.js";
-import { getAuthorById } from "../controllers/authorController.js";
+import { getAllAuthors, getAuthorById } from "../controllers/authorController.js";
 import links from "../utils/links.js";
 
 const authorRouter = Router();
@@ -8,10 +8,7 @@ const authorRouter = Router();
 authorRouter.use(logTime);
 
 authorRouter.route("/")
-    .get((req, res) => {
-
-        res.render("authors", { links: links, author: null });
-    });
+    .get(getAllAuthors);
 
 authorRouter.route("/:authorId")
     .get(getAuthorById)

@@ -45,6 +45,11 @@ async function getAuthorById(id)
     return authors.find((author) => author.id === id);
 }
 
+async function getAllAuthors()
+{
+    return [...authors];
+}
+
 async function getBookById(id)
 {
     return books.find((book) => book.id === id);
@@ -52,5 +57,6 @@ async function getBookById(id)
 
 export {
     getAuthorById,
+    getAllAuthors,
     getBookById
 };

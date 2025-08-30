@@ -10,9 +10,17 @@
     <%- include("components/navbar", { activeTab: "Authors" }) %>
     <div class="content">
         <h1 class="page-title">Authors</h1>
-        <% if (author !== null) { %>
+
+        <% if (author !== null && allAuthors === null) { %>
             <%- include("components/infoCard", { author: author }) %>
         <% } %>
+
+        <% if (author === null && allAuthors !== null) { 
+            allAuthors.forEach(author => { %>
+                
+            <%- include("components/infoCard", { author: author }) %>
+        <% })
+        } %>
     </div>
     <%- include("components/footer", {}) %>
 </body>
