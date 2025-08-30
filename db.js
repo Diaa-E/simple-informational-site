@@ -102,23 +102,43 @@ const authors = [
 const books = [
     {
         id: "1",
-        name: "Roadside Picnic"
+        name: "Roadside Picnic",
+        desc: `Roadside Picnic is a philosophical science fiction novel by the Soviet
+        authors Arkady and Boris Strugatsky that was written in 1971 and published in 1972. 
+        It is their most popular and most widely translated novel outside the former Soviet Union.`
     },
     {
         id: "2",
-        name: "Death on the Nile"
+        name: "Death on the Nile",
+        desc: `Death on the Nile is a work of detective fiction by British writer Agatha Christie, 
+        published in the UK by the Collins Crime Club on 1 November 1937 and in the US by Dodd, 
+        Mead and Company the following year.`
     },
     {
         id: "3",
-        name: "Hansel and Gretel"
+        name: "The Dunwitch Horror",
+        desc: `"The Dunwich Horror" is a cosmic horror novella by American writer H. P. 
+        Lovecraft. Written in 1928, it was first published in the April 
+        1929 issue of Weird Tales. It takes place in Dunwich, a fictional town in Massachusetts. It 
+        is considered one of the core stories of the Cthulhu Mythos.`
     },
     {
         id: "4",
-        name: "Harry Potter and the Goblet of Fire"
+        name: "Harry Potter and the Goblet of Fire",
+        desc: `Harry Potter and the Goblet of Fire is a fantasy novel 
+        written by British author J. K. Rowling. It is the fourth novel in the Harry Potter series.`
     },
     {
         id: "5",
-        name: "V for Vendetta"
+        name: "VThe Shadow Over Innsmouth",
+        desc: `The Shadow over Innsmouth is a horror novella by American author H. P.
+        Lovecraft, written in November - December 1931. `
+    },
+    {
+        id: "6",
+        name: "Animal Farm",
+        desc: `Animal Farm is a satirical allegorical dystopian novella, 
+        in the form of a beast fable, by George Orwell, first published in England on 17 August 1945.`
     }
 ];
 
