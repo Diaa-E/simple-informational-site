@@ -13,7 +13,7 @@ async function getAuthorById(req, res)
         throw new CustomNotFoundError(`Author Not Found (ID: ${authorId})`);
     }
 
-    res.render("authors", { links: links, author: { name: author.name }, allAuthors: null });
+    res.render("infoPage", { links: links, author: author});
 }
 
 async function getAllAuthors(req, res)
@@ -25,7 +25,7 @@ async function getAllAuthors(req, res)
         throw new CustomNotFoundError(``);
     }
 
-    res.render("authors", { links: links, author: null, allAuthors: allAuthors });
+    res.render("authors", { links: links, allAuthors: allAuthors });
 }
 
 export { getAuthorById, getAllAuthors };
