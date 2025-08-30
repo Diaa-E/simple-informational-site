@@ -15,12 +15,16 @@
             <%- include("components/infoCard", { author: author }) %>
         <% } %>
 
-        <% if (author === null && allAuthors !== null) { 
-            allAuthors.forEach(author => { %>
+        <% if (author === null && allAuthors !== null) { %>
+            <ul class="entry-list">
+                <% allAuthors.forEach(author => { %>
                 
-            <%- include("components/infoCard", { author: author }) %>
-        <% })
-        } %>
+                    <li>
+                        <a class="entry-link" href="./authors/<%=author.id%>"><%= author.name %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } %>
     </div>
     <%- include("components/footer", {}) %>
 </body>
