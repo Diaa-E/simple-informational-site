@@ -1,20 +1,13 @@
 import { Router } from "express";
 import logTime from "../utils/logTime.js";
-import { getBookById } from "../controllers/bookController.js";
+import { getAllBooks, getBookById } from "../controllers/bookController.js";
 
 const booksRouter = Router();
 
 booksRouter.use(logTime);
 
 booksRouter.route("/")
-    .get((req, res) => {
-
-        res.send("GET All Books");
-    })
-    .post((req, res) => {
-
-        res.send("POST all Books")
-    });
+    .get(getAllBooks);
 
 booksRouter.route("/:bookId")
     .get(getBookById)

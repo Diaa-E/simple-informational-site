@@ -1,5 +1,6 @@
-import { getBookById as getAuthorByIdDB } from "../db.js";
+import { getBookById as getAuthorByIdDB, getAllBooks as getAllBooksDB } from "../db.js";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
+import links from "../utils/links.js";
 
 async function getBookById(req, res)
 {
@@ -12,7 +13,19 @@ async function getBookById(req, res)
         throw new CustomNotFoundError(`Book Not Found (ID: ${bookId})`);
     }
 
-    res.send(`Book Name: ${book.name}`);
+    res.render(`Book Name: ${book.name}`);
 }
 
-export { getBookById };
+async function getAllBooks(req, res)
+{
+    const allBooks = await getAllBooksDB();
+
+    if (!allBooks)
+    {
+        throw new CustomNotFoundError("");
+    }
+
+    res.render("books", { links: links,  allBooks: allBooks.sort((a, b) => a > b ? 1 : -1) });
+}
+
+export { getBookById, getAllBooks };

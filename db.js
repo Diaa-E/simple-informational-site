@@ -130,7 +130,7 @@ const books = [
     },
     {
         id: "5",
-        name: "VThe Shadow Over Innsmouth",
+        name: "The Shadow Over Innsmouth",
         desc: `The Shadow over Innsmouth is a horror novella by American author H. P.
         Lovecraft, written in November - December 1931. `
     },
@@ -157,8 +157,14 @@ async function getBookById(id)
     return books.find((book) => book.id === id);
 }
 
+async function getAllBooks()
+{
+    return [...books];
+}
+
 export {
     getAuthorById,
     getAllAuthors,
-    getBookById
+    getBookById,
+    getAllBooks
 };

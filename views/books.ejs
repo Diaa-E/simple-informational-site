@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Informational Site - Authors</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include("components/navbar", { activeTab: "Books" }) %>
+    <div class="content">
+        <h1 class="page-title">Books</h1>
+        <ul class="entry-list">
+            <% allBooks.forEach(book => { %>
+            
+                <li>
+                    <a class="entry-link" href="./books/<%=book.id%>"><%= book.name %></a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <%- include("components/footer", {}) %>
+</body>
+</html>

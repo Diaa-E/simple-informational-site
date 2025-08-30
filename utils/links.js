@@ -4,6 +4,10 @@ const links = [
         text: "Authors"
     },
     {
+        href: "/books",
+        text: "Books"
+    },
+    {
         href: "/about",
         text: "About"
     },
