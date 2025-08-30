@@ -99,6 +99,11 @@ body{
     text-align: center;
 }
 
+.card-text{
+    color: var(--text);
+    margin: 20px 0;
+}
+
 .info-card{
     background-color: var(--bg-card);
     margin: 50px;
