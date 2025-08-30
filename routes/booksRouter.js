@@ -10,11 +10,6 @@ booksRouter.route("/")
     .get(getAllBooks);
 
 booksRouter.route("/:bookId")
-    .get(getBookById)
-    .post((req, res) => {
-
-        const { bookId } = req.params;
-        res.send(`POST Book ID: ${bookId}`);
-    });
+    .get(getBookById);
 
 export default booksRouter;

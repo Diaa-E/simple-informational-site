@@ -13,7 +13,7 @@ async function getBookById(req, res)
         throw new CustomNotFoundError(`Book Not Found (ID: ${bookId})`);
     }
 
-    res.render(`Book Name: ${book.name}`);
+    res.render("infoPage", { links: links, entry: book });
 }
 
 async function getAllBooks(req, res)
