@@ -25,7 +25,7 @@ async function getAllAuthors(req, res)
         throw new CustomNotFoundError(``);
     }
 
-    res.render("authors", { links: links, allAuthors: allAuthors });
+    res.render("authors", { links: links, allAuthors: allAuthors.sort((a, b) => a.name > b.name ? 1 : -1) });
 }
 
 export { getAuthorById, getAllAuthors };
