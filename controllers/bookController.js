@@ -25,7 +25,7 @@ async function getAllBooks(req, res)
         throw new CustomNotFoundError("");
     }
 
-    res.render("books", { links: links,  allBooks: allBooks.sort((a, b) => a > b ? 1 : -1) });
+    res.render("books", { links: links,  allBooks: allBooks.sort((a, b) => a.name > b.name ? 1 : -1) });
 }
 
 export { getBookById, getAllBooks };
