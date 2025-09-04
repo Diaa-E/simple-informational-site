@@ -1,15 +1,17 @@
 import { Router } from "express";
 import logTime from "../utils/logTime.js";
 import { getAllBooks, getBookById } from "../controllers/bookController.js";
+import CustomNotFoundError from "../errors/customBotFoundError.js";
 
 const booksRouter = Router();
 
 booksRouter.use(logTime);
 
-booksRouter.route("/")
-    .get(getAllBooks);
+booksRouter.get("/", getAllBooks)
+    .get("/:bookId", getBookById)
+    .all("/{*splat}", (req, res) => {
 
-booksRouter.route("/:bookId")
-    .get(getBookById);
+        throw new CustomNotFoundError("Page not Found");
+    });
 
 export default booksRouter;

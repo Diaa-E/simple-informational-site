@@ -7,15 +7,11 @@ const authorRouter = Router();
 
 authorRouter.use(logTime);
 
-authorRouter.route("/")
-    .get(getAllAuthors);
+authorRouter.get("/", getAllAuthors)
+    .get("/:authorId", getAuthorById)
+    .all("/{*splat}", (req, res) => {
 
-authorRouter.route("/:authorId")
-    .get(getAuthorById)
-    .post((req, res) => {
-
-        const { authorId } = req.params;
-        res.send(`POST Author ID: ${authorId}`);
+        throw new CustomNotFoundError("Page not Found");
     });
 
 export default authorRouter;
