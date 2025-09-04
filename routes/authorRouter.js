@@ -1,7 +1,7 @@
 import { Router } from "express";
 import logTime from "../utils/logTime.js";
 import { getAllAuthors, getAuthorById } from "../controllers/authorController.js";
-import links from "../utils/links.js";
+import CustomNotFoundError from "../errors/customBotFoundError.js";
 
 const authorRouter = Router();
 
