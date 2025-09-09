@@ -1,6 +1,7 @@
 import DB from "../db.js";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
 import links from "../utils/links.js";
+import { body, validationResult } from "express-validator";
 
 async function getAuthorById(req, res)
 {
@@ -28,4 +29,34 @@ async function getAllAuthors(req, res)
     res.render("authors", { links: links, allAuthors: allAuthors.sort((a, b) => a.name > b.name ? 1 : -1) });
 }
 
-export { getAuthorById, getAllAuthors };
+const validateAuthor = [
+
+    body("name").trim()
+    .notEmpty().withMessage("Name cannot be empty.")
+    .isAlpha().withMessage("Name must contain only letters.")
+    .isLength({ min: 2 }).withMessage("Name must be at least 2 characters long."),
+    body("bio").trim()
+    .notEmpty().withMessage("Bio cannot be empty.")
+    .isLength({ min: 50 }).withMessage("Bio must be at least 50 characters long.")
+];
+
+const addNewAuthor = [
+
+    validateAuthor,
+    async (req, res) => {
+
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty())
+        {
+            return res.status(400).render("addAuthor", { links: links, error: errors.array()[0] });
+        }
+
+        const { name, bio } = req.body;
+
+        await DB.addAuthor(name, bio);
+        res.redirect("/authors");
+    }
+];
+
+export { getAuthorById, getAllAuthors, addNewAuthor };

@@ -12,7 +12,10 @@
     <%- include("components/navbar", { activeTab: "Authors" }) %>
     <div class="content">
         <h1 class="page-title">Add a New Author</h1>
-        <form class="new-form" action="/authors/new" method="post">
+        <form class="new-form" action="/authors/new" method="POST">
+            <% if (error) {%>
+                <p class="form-error"><%= error.msg %></p>
+            <% } %>
             <p class="note">Required fields are marked with a (*)</p>
 
             <div class="form-group">

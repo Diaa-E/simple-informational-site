@@ -49,3 +49,7 @@
     color: var(--text);
     font-size: .8rem;
 }
+
+.form-error{
+    color: var(--error);
+}

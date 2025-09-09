@@ -154,6 +154,15 @@ async function getAllAuthors()
     return [...authors];
 }
 
+async function addAuthor(name, bio)
+{
+    authors.push({
+        id: generateId(),
+        name: name,
+        desc: bio
+    });
+}
+
 async function getBookById(id)
 {
     return books.find((book) => book.id === id);
@@ -167,6 +176,7 @@ async function getAllBooks()
 const DB = {
     getAuthorById,
     getAllAuthors,
+    addAuthor,
     getBookById,
     getAllBooks
 };

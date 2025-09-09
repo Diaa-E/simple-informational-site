@@ -16,6 +16,7 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "public")))
+app.use(express.urlencoded({ extended: true }));
 app.use("/books", booksRouter);
 app.use("/authors", authorRouter);
 app.use("/", indexRouter);
