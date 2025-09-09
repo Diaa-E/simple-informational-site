@@ -1,4 +1,4 @@
-import { getBookById as getAuthorByIdDB, getAllBooks as getAllBooksDB } from "../db.js";
+import DB from "../db.js";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
 import links from "../utils/links.js";
 
@@ -6,7 +6,7 @@ async function getBookById(req, res)
 {
     const { bookId } = req.params;
 
-    const book = await getAuthorByIdDB(bookId);
+    const book = await DB.getBookById(bookId);
 
     if (!book)
     {
@@ -18,7 +18,7 @@ async function getBookById(req, res)
 
 async function getAllBooks(req, res)
 {
-    const allBooks = await getAllBooksDB();
+    const allBooks = await DB.getAllBooks();
 
     if (!allBooks)
     {

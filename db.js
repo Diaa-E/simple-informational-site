@@ -162,9 +162,11 @@ async function getAllBooks()
     return [...books];
 }
 
-export {
+const DB = {
     getAuthorById,
     getAllAuthors,
     getBookById,
     getAllBooks
 };
+
+export default DB;

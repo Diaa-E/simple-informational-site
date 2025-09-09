@@ -1,4 +1,4 @@
-import { getAuthorById as getAuthorByIdDB, getAllAuthors as getAllAuthorsDB } from "../db.js";
+import DB from "../db.js";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
 import links from "../utils/links.js";
 
@@ -6,7 +6,7 @@ async function getAuthorById(req, res)
 {
     const { authorId } = req.params;
 
-    const author = await getAuthorByIdDB(authorId);
+    const author = await DB.getAuthorById(authorId);
 
     if (!author)
     {
@@ -18,7 +18,7 @@ async function getAuthorById(req, res)
 
 async function getAllAuthors(req, res)
 {
-    const allAuthors = await getAllAuthorsDB();
+    const allAuthors = await DB.getAllAuthors();
 
     if (!allAuthors)
     {
