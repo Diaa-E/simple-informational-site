@@ -27,6 +27,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 80dvh;
+    gap: 50px;
 }
 
 .navbar{
@@ -109,4 +110,16 @@ body{
 .button-primary{
     background-color: var(--text-title);
     color: var(--bg);
+}
+
+.button-link, .button-link:visited{
+    cursor: pointer;
+    color: var(--bg);
+    padding: 5px;
+    border: none;
+    background-color: var(--text-title);
+    color: var(--bg);
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 5px;
 }
