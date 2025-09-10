@@ -1,7 +1,7 @@
 import DB from "../db.js";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
 import links from "../utils/links.js";
-import { body, query, validationResult } from "express-validator";
+import { body, validationResult } from "express-validator";
 
 async function getAuthorById(req, res)
 {
