@@ -13,10 +13,6 @@ indexRouter.get("/", (req, res) => {
 
     res.render("about", {links: links});
 })
-.get("/contact", (req, res) => {
-
-    res.render("contact", {links: links});
-})
 .route("/{*splat}", (req, res) => {
 
     throw new CustomNotFoundError(`Page Not Found`);

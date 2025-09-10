@@ -42,3 +42,8 @@
 .form-error{
     color: var(--error);
 }
+
+.success-message{
+    color: var(--text-title);
+    text-align: center;
+}

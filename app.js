@@ -6,6 +6,7 @@ import authorRouter from "./routes/authorRouter.js";
 import booksRouter from "./routes/booksRouter.js";
 import path from "node:path";
 import links from "./utils/links.js";
+import contactRouter from "./routes/contactRouter.js";
 
 dotenv.config();
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({ extended: true }));
 app.use("/books", booksRouter);
 app.use("/authors", authorRouter);
+app.use("/contact", contactRouter)
 app.use("/", indexRouter);
 app.use((err, req, res, next) => {
 
