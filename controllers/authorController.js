@@ -44,7 +44,7 @@ const validateAuthor = [
 
     body("name").trim()
     .notEmpty().withMessage("Name cannot be empty.")
-    .isAlpha().withMessage("Name must contain only letters.")
+    .isAlpha("en-US", { ignore: " " }).withMessage("Name must contain only letters.")
     .isLength({ min: 2 }).withMessage("Name must be at least 2 characters long."),
     body("bio").trim()
     .notEmpty().withMessage("Bio cannot be empty.")
