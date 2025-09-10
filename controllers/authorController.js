@@ -1,7 +1,7 @@
 import DB from "../db.js";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
 import links from "../utils/links.js";
-import { body, validationResult } from "express-validator";
+import { body, query, validationResult } from "express-validator";
 
 async function getAuthorById(req, res)
 {
@@ -37,7 +37,7 @@ async function queryAuthors(req, res)
 
     console.log(authors)
 
-    res.render("authors", { links: links, allAuthors: authors.sort((a, b) => a.name > b.name ? 1 : -1)});
+    res.render("authors", { links: links, allAuthors: authors.sort((a, b) => a.name > b.name ? 1 : -1), keyword: name});
 }
 
 const validateAuthor = [

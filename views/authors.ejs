@@ -12,18 +12,21 @@
     <div class="content">
         <h1 class="page-title">Authors</h1>
         <a class="button-link" href="/authors/new">Add a New Author</a>
-        <form class="search-form" action="/authors" method="GET">
+        <form class="search-form" action="/authors/search" method="GET">
             <input class="textbox" name="name" id="name" type="search">
             <button class="button button-primary" type="submit">Search</button>
         </form>
-        <ul class="entry-list">
-            <% allAuthors.forEach(author => { %>
-            
-                <li>
-                    <a class="entry-link" href="/authors/<%=author.id%>"><%= author.name %></a>
-                </li>
-            <% }) %>
-        </ul>
+        <% if (allAuthors !== null) {%>
+            <p class="results-title">Found <%= allAuthors.length %> results for "<%= keyword %>"</p>
+            <ul class="entry-list">
+                <% allAuthors.forEach(author => { %>
+                    
+                    <li>
+                        <a class="entry-link" href="/authors/<%=author.id%>"><%= author.name %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } %>
     </div>
     <%- include("components/footer", {}) %>
 </body>

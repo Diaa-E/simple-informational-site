@@ -138,3 +138,8 @@ body{
 .search-form{
     margin: 0 auto;
 }
+
+.results-title{
+    color: var(--text);
+    margin: 0 auto;
+}

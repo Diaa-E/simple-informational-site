@@ -8,7 +8,10 @@ const authorRouter = Router();
 
 authorRouter.use(logTime);
 
-authorRouter.get("/", getAllAuthors)
+authorRouter.get("/", (req, res) => {
+
+        res.render("authors", { links: links, allAuthors: null, keyword: null })
+    })
     .post("/new", addNewAuthor)
     .get("/new", (req, res) => {
 
