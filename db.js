@@ -185,13 +185,23 @@ async function getAllBooks()
     return [...books];
 }
 
+async function addBook(title, bio)
+{
+    books.push({
+        id: generateId(),
+        name: title,
+        desc: bio
+    });
+}
+
 const DB = {
     getAuthorById,
     getAllAuthors,
     addAuthor,
     queryAuthor,
     getBookById,
-    getAllBooks
+    getAllBooks,
+    addBook
 };
 
 export default DB;

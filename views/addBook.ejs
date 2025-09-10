@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Book</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/newForm.css">
+    <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
+</head>
+<body>
+    <%- include("components/navbar", { activeTab: "Books" }) %>
+    <div class="content">
+        <h1 class="page-title">Add a New Book</h1>
+        <form class="new-form" action="/books/new" method="POST">
+            <% if (error) {%>
+                <p class="form-error"><%= error.msg %></p>
+            <% } %>
+            <p class="note">Required fields are marked with a (*)</p>
+
+            <div class="form-group">
+                <label class="field-label" for="title">title</label>
+                <input value="<%= data.title %>" required class="textbox" type="text" name="title" id="title">
+            </div>
+
+            <div class="form-group">
+                <label class="field-label" for="bio">Bio</label>
+                <textarea required class="textbox" rows="6" name="bio" id="bio"><%= data.bio %></textarea>
+            </div>
+
+            <button class="button button-primary button-submit" type="submit">Add</button>
+        </form>
+    </div>
+    <%- include("components/footer", {}) %>
+</body>
+</html>
