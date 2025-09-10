@@ -123,3 +123,18 @@ body{
     text-decoration: none;
     padding: 5px;
 }
+
+.textbox{
+    resize: none;
+    background-color: var(--text);
+    padding: 5px;
+    border: none;
+}
+
+.textbox:focus{
+    outline: solid 1px var(--text-title);
+}
+
+.search-form{
+    margin: 0 auto;
+}

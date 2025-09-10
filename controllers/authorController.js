@@ -29,6 +29,17 @@ async function getAllAuthors(req, res)
     res.render("authors", { links: links, allAuthors: allAuthors.sort((a, b) => a.name > b.name ? 1 : -1) });
 }
 
+async function queryAuthors(req, res)
+{
+    const { name } = req.query;
+
+    const authors = await DB.queryAuthor(name);
+
+    console.log(authors)
+
+    res.render("authors", { links: links, allAuthors: authors.sort((a, b) => a.name > b.name ? 1 : -1)});
+}
+
 const validateAuthor = [
 
     body("name").trim()
@@ -61,4 +72,4 @@ const addNewAuthor = [
     }
 ];
 
-export { getAuthorById, getAllAuthors, addNewAuthor };
+export { getAuthorById, getAllAuthors, queryAuthors, addNewAuthor };

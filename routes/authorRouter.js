@@ -1,6 +1,6 @@
 import { Router } from "express";
 import logTime from "../utils/logTime.js";
-import { addNewAuthor, getAllAuthors, getAuthorById } from "../controllers/authorController.js";
+import { addNewAuthor, getAllAuthors, getAuthorById, queryAuthors } from "../controllers/authorController.js";
 import CustomNotFoundError from "../errors/customBotFoundError.js";
 import links from "../utils/links.js";
 
@@ -14,6 +14,7 @@ authorRouter.get("/", getAllAuthors)
 
         res.render("addAuthor", { links: links, error: null, data: { name: "", bio: "" } })
     })
+    .get("/search", queryAuthors)
     .get("/:authorId", getAuthorById)
     .all("/{*splat}", (req, res) => {
 

@@ -163,6 +163,18 @@ async function addAuthor(name, bio)
     });
 }
 
+async function queryAuthor(name)
+{
+    if (name === "")
+    {
+        return [...authors];
+    }
+    else
+    {
+        return authors.filter(author => author.name.toLowerCase().includes(name.toLowerCase()));
+    }
+}
+
 async function getBookById(id)
 {
     return books.find((book) => book.id === id);
@@ -177,6 +189,7 @@ const DB = {
     getAuthorById,
     getAllAuthors,
     addAuthor,
+    queryAuthor,
     getBookById,
     getAllBooks
 };
