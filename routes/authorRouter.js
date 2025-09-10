@@ -12,7 +12,7 @@ authorRouter.get("/", getAllAuthors)
     .post("/new", addNewAuthor)
     .get("/new", (req, res) => {
 
-        res.render("addAuthor", { links: links, error: null })
+        res.render("addAuthor", { links: links, error: null, data: { name: "", bio: "" } })
     })
     .get("/:authorId", getAuthorById)
     .all("/{*splat}", (req, res) => {

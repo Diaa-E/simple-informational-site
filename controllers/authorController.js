@@ -49,7 +49,9 @@ const addNewAuthor = [
 
         if (!errors.isEmpty())
         {
-            return res.status(400).render("addAuthor", { links: links, error: errors.array()[0] });
+            return res.status(400).render(
+                "addAuthor", 
+                { links: links, error: errors.array()[0], data: { name: req.body.name, bio: req.body.bio } });
         }
 
         const { name, bio } = req.body;
