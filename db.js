@@ -194,6 +194,18 @@ async function addBook(title, bio)
     });
 }
 
+async function queryBook(title)
+{
+    if (title === "")
+    {
+        return [...books];
+    }
+    else
+    {
+        return books.filter(book => book.name.toLocaleLowerCase().includes(title.toLowerCase()));
+    }
+}
+
 const DB = {
     getAuthorById,
     getAllAuthors,
@@ -201,7 +213,8 @@ const DB = {
     queryAuthor,
     getBookById,
     getAllBooks,
-    addBook
+    addBook,
+    queryBook
 };
 
 export default DB;

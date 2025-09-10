@@ -29,6 +29,15 @@ async function getAllBooks(req, res)
     res.render("books", { links: links,  allBooks: allBooks.sort((a, b) => a.name > b.name ? 1 : -1) });
 }
 
+async function queryBook(req, res)
+{
+    const { title } = req.query;
+
+    const books = await DB.queryBook(title);
+
+    res.render("books", { links: links, allBooks: books.sort((a, b) => a.name > b.name ? 1 : -1), keyword: req.query.title })
+}
+
 const validateBook = [
     body("title").trim()
     .notEmpty().withMessage("Title cannot be empty.")
@@ -60,4 +69,4 @@ const addNewBook = [
     }
 ]
 
-export { getBookById, getAllBooks, addNewBook };
+export { getBookById, getAllBooks, addNewBook, queryBook };
