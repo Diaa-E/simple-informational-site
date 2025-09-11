@@ -58,9 +58,22 @@ body{
 }
 
 .home-link, .home-link:visited{
+    display: flex;
+    place-items: center;
+    place-content: center;
+    gap: 10px;
     text-decoration: none;
     color: var(--text-title);
     font-family: var(--font-title);
+}
+
+.home-link-icon{
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/favicon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .page-title{
