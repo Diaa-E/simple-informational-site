@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "carbon";
+    src: url("../fonts/carbon.ttf");
+}
+
 :root{
 
     --bg: #37353e;
@@ -7,10 +12,12 @@
     --text-title: #d3bf72;
     --active: #67b5e8;
     --error: #e86767;
+    --font-title: "carbon", courier;
 }
 
 *{
     font-family: Courier, monospace;
+    font-weight: normal;
     margin: 0;
 }
 
@@ -53,11 +60,13 @@ body{
 .home-link, .home-link:visited{
     text-decoration: none;
     color: var(--text-title);
+    font-family: var(--font-title);
 }
 
 .page-title{
     text-align: center;
     color: var(--text-title);
+    font-family: var(--font-title);
 }
 
 .footer{
