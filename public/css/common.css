@@ -151,6 +151,7 @@ body{
 .button-primary:hover{
     background-color: var(--none);
     color: var(--text-title);
+    border: solid 2px var(--text-title);
 }
 
 .button-link, .button-link:visited{
