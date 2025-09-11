@@ -6,11 +6,12 @@
     <title>Simple Informational Site - Contact Us</title>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/newForm.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
 </head>
 <body>
     <%- include("components/navbar", {activeTab: "Contact Us"}) %>
-    <div class="content">
+    <div class="content background">
         <h1 class="page-title">Contact Us</h1>
         <form class="new-form" action="/contact" method="POST">
             <% if (error) {%>
