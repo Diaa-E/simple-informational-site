@@ -3,6 +3,11 @@
     src: url("../fonts/carbon.ttf");
 }
 
+@font-face {
+    font-family: "NK57 mono";
+    src: url("../fonts/NK57_Monospace.otf");
+}
+
 :root{
 
     --bg: #37353e;
@@ -15,10 +20,11 @@
     --error: #e86767;
     --none: #00000000;
     --font-title: "carbon", courier;
+    --font-default: "NK57 mono", sans-serif;
 }
 
 *{
-    font-family: Courier, monospace;
+    font-family: var(--font-default);
     font-weight: normal;
     margin: 0;
 }
@@ -132,6 +138,7 @@ body{
 }
 
 .button-primary{
+    font-size: 1rem;
     background-color: var(--text-title);
     color: var(--text-dark);
     border: solid 2px var(--none);
@@ -143,6 +150,7 @@ body{
 }
 
 .button-link, .button-link:visited{
+    font-size: 1rem;
     cursor: pointer;
     color: var(--text-dark);
     padding: 5px 10px;
