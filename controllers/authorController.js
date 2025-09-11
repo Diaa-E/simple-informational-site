@@ -35,8 +35,6 @@ async function queryAuthors(req, res)
 
     const authors = await DB.queryAuthor(name);
 
-    console.log(authors)
-
     res.render("authors", { links: links, allAuthors: authors.sort((a, b) => a.name > b.name ? 1 : -1), keyword: name});
 }
 
