@@ -6,11 +6,12 @@
     <title>Simple Informational Site - Authors</title>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/infoPage.css">
+    <link rel="stylesheet" href="/css/<%= activeTab === "Books" ? "books" : "authors" %>.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
 </head>
 <body>
     <%- include("components/navbar", { activeTab: activeTab }) %>
-    <div class="content">
+    <div class="content background">
         <h1 class="page-title"><%= entry.name %></h1>
 
         <%- include("components/infoCard", { entry: entry }) %>
