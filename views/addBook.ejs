@@ -6,11 +6,12 @@
     <title>Add a New Book</title>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/newForm.css">
+    <link rel="stylesheet" href="/css/books.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
 </head>
 <body>
     <%- include("components/navbar", { activeTab: "Books" }) %>
-    <div class="content">
+    <div class="content background">
         <h1 class="page-title">Add a New Book</h1>
         <form class="new-form" action="/books/new" method="POST">
             <% if (error) {%>
