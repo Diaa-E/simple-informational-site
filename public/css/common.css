@@ -178,6 +178,7 @@ body{
     background-color: var(--text);
     padding: 5px;
     border: none;
+    font-size: 1rem;
 }
 
 .textbox:focus{
