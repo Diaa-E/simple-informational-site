@@ -13,6 +13,7 @@
     --text-dark: #201f24;
     --active: #67b5e8;
     --error: #e86767;
+    --none: #00000000;
     --font-title: "carbon", courier;
 }
 
@@ -126,25 +127,37 @@ body{
 
 .button{
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
 }
 
 .button-primary{
     background-color: var(--text-title);
     color: var(--text-dark);
+    border: solid 2px var(--none);
+}
+
+.button-primary:hover{
+    background-color: var(--none);
+    color: var(--text-title);
 }
 
 .button-link, .button-link:visited{
     cursor: pointer;
     color: var(--text-dark);
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
     background-color: var(--text-title);
     color: var(--text-dark);
     margin: 0 auto;
     text-decoration: none;
-    padding: 5px;
+    border: solid 2px var(--none);
+}
+
+.button-link:hover{
+    background-color: var(--none);
+    color: var(--text-title);
+    border: solid 2px var(--text-title);
 }
 
 .textbox{
