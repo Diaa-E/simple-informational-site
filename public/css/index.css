@@ -6,8 +6,4 @@
 
 .background{
     background-image: url("../images/home.webp");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
