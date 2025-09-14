@@ -6,4 +6,4 @@ const titleText = document.querySelector(".page-title>.hidden-text").textContent
 const listItems = document.querySelectorAll("li.entry-list-item");
 
 animateTypewriter(titleText, titleElement, 100);
-animateListItems(listItems);
+animateListItems(listItems, 50);

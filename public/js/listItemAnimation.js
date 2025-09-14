@@ -1,4 +1,4 @@
-export default function animateListItems(listItems)
+export default function animateListItems(listItems, delay)
 {
     if (!listItems) return;
 
@@ -7,6 +7,6 @@ export default function animateListItems(listItems)
         setTimeout(() => {
 
             listItems[i].classList.add("visible");
-        }, 50 * i);
+        }, delay * i);
     }
 }
