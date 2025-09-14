@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/error.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
+    <script type="module" src="/js/error.js" defer></script>
 </head>
 <body>
     <%- include("components/navbar", {activeTab: ""}) %>
     <div class="content">
         <h1 class="error">
-            Error
+            <span class="hidden-text">Error</span>
+            <span class="visible-text"></span>
         </h1>
         <h2 class="error-message"><%= status %></h2>
         <h2 class="error-message"><%= message %></h2>

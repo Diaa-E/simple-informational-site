@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/css/infoPage.css">
     <link rel="stylesheet" href="/css/<%= activeTab === "Books" ? "books" : "authors" %>.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
+    <script type="module" src="/js/authors.js" defer></script>
 </head>
 <body>
     <%- include("components/navbar", { activeTab: activeTab }) %>
     <div class="content background">
-        <h1 class="page-title"><%= entry.name %></h1>
+        <h1 class="page-title">
+            <span class="hidden-text"> <%= entry.name %></span>
+            <span class="visible-text"></span>
+        </h1>
 
         <%- include("components/infoCard", { entry: entry }) %>
     </div>

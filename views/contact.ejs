@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/css/newForm.css">
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
+    <script type="module" src="/js/contact.js" defer></script>
 </head>
 <body>
     <%- include("components/navbar", {activeTab: "Contact Us"}) %>
     <div class="content background">
-        <h1 class="page-title">Contact Us</h1>
+        <h1 class="page-title">
+            <span class="hidden-text">Contact Us</span>
+            <span class="visible-text"></span>
+        </h1>
         <form class="new-form" action="/contact" method="POST">
             <% if (error) {%>
                 <p class="form-error"><%= error.msg %></p>

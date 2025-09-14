@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/books.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
+    <script type="module" src="/js/books.js" defer></script>
 </head>
 <body>
     <%- include("components/navbar", { activeTab: "Books" }) %>
     <div class="content background">
-        <h1 class="page-title">Books</h1>
+        <h1 class="page-title">
+            <span class="hidden-text">Books</span>
+            <span class="visible-text"></span>
+        </h1>
         <a class="button-link" href="/books/new">Add a New Author</a>
         <form class="search-form" action="/books/search" method="GET">
             <input class="textbox" name="title" id="title" type="search">

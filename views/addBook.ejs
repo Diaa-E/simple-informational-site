@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/css/newForm.css">
     <link rel="stylesheet" href="/css/books.css">
     <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
+    <script type="module" src="/js/authors.js" defer></script>
 </head>
 <body>
     <%- include("components/navbar", { activeTab: "Books" }) %>
     <div class="content background">
-        <h1 class="page-title">Add a New Book</h1>
+        <h1 class="page-title">
+            <span class="hidden-text">Add a New Book</span>
+            <span class="visible-text"></span>
+        </h1>
         <form class="new-form" action="/books/new" method="POST">
             <% if (error) {%>
                 <p class="form-error"><%= error.msg %></p>
