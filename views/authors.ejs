@@ -22,7 +22,11 @@
             <button class="button button-primary" type="submit">Search</button>
         </form>
         <% if (allAuthors !== null) {%>
-            <p class="results-title">Found <%= allAuthors.length %> results for "<%= keyword %>"</p>
+            <% if (keyword === "") { %>
+                <p class="results-title">Showing All Authors</p>
+            <% } else { %>
+                <p class="results-title">Showing <%= allAuthors.length %> results for "<%= keyword %>"</p>
+            <% } %>
             <ul class="entry-list">
                 <% allAuthors.forEach(author => { %>
                     
