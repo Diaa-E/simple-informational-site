@@ -7,3 +7,7 @@
     color: var(--text);
     text-align: center;
 }
+
+.background{
+    background-image: url("../images/error.webp");
+}
