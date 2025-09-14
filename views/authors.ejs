@@ -27,10 +27,18 @@
             <% } else { %>
                 <p class="results-title">Showing <%= allAuthors.length %> results for "<%= keyword %>"</p>
             <% } %>
-            <ul class="entry-list">
+            <ul class="entry-list hidden-list">
                 <% allAuthors.forEach(author => { %>
                     
                     <li>
+                        <a class="entry-link" href="/authors/<%=author.id%>"><%= author.name %></a>
+                    </li>
+                <% }) %>
+            </ul>
+            <ul class="entry-list visible-list">
+                <% allAuthors.forEach(author => { %>
+                    
+                    <li class="entry-list-item">
                         <a class="entry-link" href="/authors/<%=author.id%>"><%= author.name %></a>
                     </li>
                 <% }) %>
