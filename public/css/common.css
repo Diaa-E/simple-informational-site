@@ -128,6 +128,17 @@ body{
     color: var(--text);
 }
 
+.entry-list-item{
+    transform: translateX(-100px);
+    filter: opacity(0);
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.entry-list-item.visible{
+    transform: translateX(0);
+    filter: opacity(1);
+}
 
 .entry-link, .entry-link:visited{
     color: var(--active);
@@ -204,4 +215,8 @@ body{
     font-family: inherit;
     font-size: inherit; 
     white-space: pre;
+}
+
+.hidden-list{
+    display: none;
 }
