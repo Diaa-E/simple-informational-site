@@ -13,7 +13,7 @@ indexRouter.get("/", (req, res) => {
 
     res.render("about", {links: links});
 })
-.route("/{*splat}", (req, res) => {
+.all("/{*splat}", (req, res) => {
 
     throw new CustomNotFoundError(`Page Not Found`);
 });
