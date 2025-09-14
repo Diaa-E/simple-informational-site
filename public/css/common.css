@@ -193,3 +193,15 @@ body{
     color: var(--text);
     margin: 0 auto;
 }
+
+.hidden-text{
+    font-family: inherit;
+    font-size: inherit;
+    display: none;
+}
+
+.visible-text{
+    font-family: inherit;
+    font-size: inherit; 
+    white-space: pre;
+}

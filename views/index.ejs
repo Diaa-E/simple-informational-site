@@ -6,11 +6,15 @@
         <link rel="stylesheet" href="/css/common.css">
         <link rel="stylesheet" href="/css/index.css">
         <link rel="shortcut icon" href="/images/favicon.svg" type="svg/xml">
+        <script src="/js/index.js" defer></script>
     </head>
     <body>
         <%- include("components/navbar", {links: links, activeTab: ""}) %>
         <div class="content background">
-            <h1 class="page-title">Simple Informational Site</h1>
+            <h1 class="page-title">
+                <span class="hidden-text">Simple Informational Site</span>
+                <span aria-hidden="true" class="visible-text"></span>
+            </h1>
             <h2 class="hero">
                 A practice project focused on the MVC pattern using Express JS.
                 <a class="button-link" href="/about">Learn More</a>
