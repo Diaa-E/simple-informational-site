@@ -1,17 +1,19 @@
-<nav class="navbar">
-    <a href="/" class="home-link">
-        <div class="home-link-icon"></div>
-        Simple Informational Site
-    </a>
-    <ul>
-        <% links.map((link) => { %>
-            <li>
-                <a class="nav-link" href="<%= link.href %>">
-                    <span class="<%= activeTab === link.text ? "active" : "" %>">
-                        <%= link.text %> 
-                    </span>
-                </a>
-            </li>
-        <% }) %>
-    </ul>
-</nav>
+<header class="header">
+    <nav class="navbar">
+        <a href="/" class="home-link">
+            <div class="home-link-icon"></div>
+            Simple Informational Site
+        </a>
+        <ul>
+            <% links.map((link) => { %>
+                <li>
+                    <a class="nav-link" href="<%= link.href %>">
+                        <span class="<%= activeTab === link.text ? "active" : "" %>">
+                            <%= link.text %>
+                        </span>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </nav>
+</header>

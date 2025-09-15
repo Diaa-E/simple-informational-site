@@ -49,13 +49,18 @@ body{
     background-attachment: fixed;
 }
 
-.navbar{
+.header{
     background-color: var(--bg-light);
+}
+
+.navbar{
+    max-width: 1280px;
     display: flex;
     place-items: center;
     place-content: center;
     justify-content: space-between;
-    padding: 30px 200px;
+    padding: 30px;
+    margin: 0 auto;
 }
 
 .navbar .nav-link, .nav-link:visited{
