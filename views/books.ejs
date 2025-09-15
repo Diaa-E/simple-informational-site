@@ -27,15 +27,7 @@
             <% } else { %>
                 <p class="results-title">Showing <%= allBooks.length %> results for "<%= keyword %>"</p>
             <% } %>
-            <ul class="entry-list hidden-list">
-                <% allBooks.forEach(book => { %>
-                    
-                    <li>
-                        <a class="entry-link" href="/books/<%=book.id%>"><%= book.name %></a>
-                    </li>
-                <% }) %>
-            </ul>
-            <ul aria-hidden="true" class="entry-list visible-list">
+            <ul class="entry-list visible-list">
                 <% allBooks.forEach(book => { %>
                     
                     <li class="entry-list-item">
